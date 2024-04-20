@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 const { fontFamily } = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+
+console.log(colors);
 
 const config = {
   darkMode: ["class"],
@@ -52,6 +55,23 @@ const config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        // new
+        //
+        //
+        //
+        //
+
+        // prmitive
+        // blackk: "hsl(var(--blackk))",
+        blackk: "var(--blackk)",
+        // semantic
+        form: {
+          DEFAULT: "var(--blackk)",
+        },
+        interactive: {
+          DEFAULT: colors.blue[500], // need brighter
+          foreground: colors.white,
         },
       },
       borderRadius: {
