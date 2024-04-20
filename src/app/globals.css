@@ -31,3 +31,49 @@ body {
     text-wrap: balance;
   }
 }
+
+/* 4 - Text */
+.text--4 {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+}
+
+/* 1 - Link */
+.text--1 {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.text--2 {
+  /* 2 - Text */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 31.2px */
+}
+
+/* 3 - Text */
+.text--3 {
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 41.6px */
+}
+
+/* 5 - Header Text */
+.text--5 {
+  font-family: Inter;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%; /* 55.2px */
+}
