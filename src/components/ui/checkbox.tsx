@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
  * TODO:
  * -----
  * Error styles
- *
+ * check disabled
  */
 
 /**
