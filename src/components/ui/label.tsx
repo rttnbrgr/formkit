@@ -12,10 +12,22 @@ import { cn } from "@/lib/utils";
  * A row that holds a checkbox or radio, and a label
  */
 
-const _typography = "font-sans text-md font-normal leading-none text-form";
+// const _typography = "font-sans text-md font-normal leading-none text-form";
+// const _typography = "font-sans text-md font-normal leading-none text-form";
+const _typography = "font-sans text-form leading-none text-current";
 const _disabled = "peer-disabled:cursor-not-allowed peer-disabled:opacity-70";
 
-const labelVariants = cva([_typography, _disabled]);
+const labelVariants = cva([_typography, _disabled], {
+  variants: {
+    size: {
+      small: ["typography-4"],
+      default: ["typography-3"],
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
 
 type LabelRef = React.ElementRef<typeof LabelPrimitive.Root>;
 
@@ -23,10 +35,10 @@ type LabelProps = React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
   VariantProps<typeof labelVariants>;
 
 const Label = React.forwardRef<LabelRef, LabelProps>(
-  ({ className, ...props }, ref) => (
+  ({ className, size, ...props }, ref) => (
     <LabelPrimitive.Root
       ref={ref}
-      className={cn(labelVariants(), className)}
+      className={cn(labelVariants({ size }), className)}
       {...props}
     />
   )
