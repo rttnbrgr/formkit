@@ -36,6 +36,10 @@
 
     /* new */
     --blackk: #212121;
+    --grey1: #cfdddd;
+    --grey2: rgb(37 37 37 / 5%);
+    --redNew: #d10000;
+    --blueNew: #0000ff;
   }
 
   .dark {
@@ -76,4 +80,42 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* 2 - Text */
+/* 24px / 1.5 (32px) */
+.typography-1 {
+  @apply font-sans;
+  @apply text-2xl;
+  @apply not-italic;
+  @apply font-normal;
+}
+
+/* 7 - Input */
+/* 20px / 1.5 (28px) */
+.typography-2 {
+  @apply font-sans;
+  @apply text-xl;
+  @apply not-italic;
+  @apply font-normal;
+}
+
+/* 4 - Text */
+/* 16px / 1.5 (24px) */
+/* line-height: 140%; 22.4px ??? */
+.typography-3 {
+  @apply font-sans;
+  @apply text-base;
+  @apply not-italic;
+  @apply font-normal;
+}
+
+/* 6. Small */
+/* 12px / 1.5 (16px) */
+.typography-4 {
+  @apply font-sans;
+  @apply text-xs;
+  @apply not-italic;
+  @apply font-normal;
+  @apply uppercase;
 }

@@ -63,8 +63,11 @@ const config = {
         //
 
         // prmitive
-        // blackk: "hsl(var(--blackk))",
         blackk: "var(--blackk)",
+        grey1: "var(--grey1)",
+        grey2: "var(--grey2)",
+        redNew: "var(--redNew)",
+        blueNew: "var(--blueNew)",
         // semantic
         form: {
           DEFAULT: "var(--blackk)",
