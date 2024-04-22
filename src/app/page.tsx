@@ -2,13 +2,15 @@ import Image from "next/image";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label, LabelWrap } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { WrappedInput } from "@/components/ui/input";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-center p-24">
-      <div className="flex flex-col gap-4 bg-green-100">
+    <main className="flex min-h-screen flex-col justify-center p-24 bg-grey1">
+      <div className="flex flex-col gap-10 ">
         {/* Checkbox */}
-        <div className="flex flex-col gap-4 ">
+        <div>hi</div>
+        <div className="flex flex-col gap-4 bg-indigo-500">
           <div className="text-blackk font-sans text-lg font-normal leading-snug">
             By filling out this form, you agree that you have read the Config
             FAQ.
@@ -17,6 +19,23 @@ export default function Home() {
             <Checkbox id="terms" />
             <Label htmlFor="terms">Yes</Label>
           </LabelWrap>
+        </div>
+
+        {/* Input */}
+        <div>before</div>
+        <div className="flex flex-col gap-4 ">
+          <WrappedInput />
+        </div>
+        <div className="flex flex-col gap-4 ">
+          <WrappedInput placeholder="Placeholder" />
+        </div>
+        <div className="flex flex-col gap-4 ">
+          <input />
+        </div>
+        <div className="flex flex-col gap-4 ">
+          <Label size="compare">Label</Label>
+          <Label size="small">Label</Label>
+          <Label size="default">Label</Label>
         </div>
 
         {/* RadioGroup */}
