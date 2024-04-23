@@ -60,7 +60,7 @@ export { Input };
 
 // need modified fill
 const _baseWrap =
-  "flex flex-col px-4 pt-3 pb-[1px] gap-1.5 rounded-t-md bg-grey2 ";
+  "flex flex-col px-4 pt-3 pb-[1px] gap-1.5 rounded-t-md bg-grey2";
 // border-t-2 border-t-transparent
 const _borderWrap = "border border-dashed border-transparent border-b-blackk";
 const _focusWrap =

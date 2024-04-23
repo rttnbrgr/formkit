@@ -58,6 +58,15 @@ export default function Home() {
           </RadioGroup>
         </div>
       </div>
+      <div className="border border-white w-full rounded-lg py-8 px-4 my-4">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-row gap-4 ">
+            <WrappedInput className="grow" />
+            <WrappedInput className="grow" placeholder="Placeholder" />
+          </div>
+          <WrappedInput />
+        </div>
+      </div>
     </main>
   );
 }
