@@ -3,6 +3,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label, LabelWrap } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { WrappedInput } from "@/components/ui/input";
+import { ProfileForm } from "@/components/form-demo";
 
 export default function Home() {
   return (
@@ -67,6 +68,7 @@ export default function Home() {
           <WrappedInput />
         </div>
       </div>
+      <ProfileForm />
     </main>
   );
 }
