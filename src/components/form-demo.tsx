@@ -14,10 +14,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { Input, WrappedInput, WrappedInputDumb } from "@/components/ui/input";
 
 const formSchema = z.object({
   username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+  usernameAlt: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
 });
@@ -28,6 +31,7 @@ export function ProfileForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
+      usernameAlt: "",
     },
   });
 
@@ -56,6 +60,29 @@ export function ProfileForm() {
               <FormMessage />
             </FormItem>
           )}
+        />
+        {/* tbis is the context wrapper for the field? */}
+        <FormField
+          control={form.control}
+          name="usernameAlt"
+          render={({ field, fieldState, formState }) => {
+            console.log("fieldState", fieldState);
+            console.log("field", field);
+            console.log("formState", formState);
+            return (
+              // tbis is the context wrapper for the item?
+              <FormItem>
+                <WrappedInputDumb>
+                  <FormLabel />
+                  {/* This is the slot */}
+                  <FormControl>
+                    <Input placeholder="shadcn" {...field} />
+                  </FormControl>
+                </WrappedInputDumb>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
         />
         <Button type="submit">Submit</Button>
       </form>

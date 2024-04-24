@@ -23,7 +23,8 @@ const _focus =
   // "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
   "focus-visible:outline-none";
 const _disabled = "disabled:cursor-not-allowed disabled:opacity-50";
-const _error = "placeholder:text-redNew";
+// const _error = "placeholder:text-redNew";
+const _error = "placeholder:text-black/20"; // fix
 
 const inputVariants = cva([
   _base,
@@ -129,3 +130,21 @@ export const WrappedInput = React.forwardRef<
 });
 
 WrappedInput.displayName = "Input with Label";
+
+type WrappedInputDumbProps = React.ComponentPropsWithoutRef<"div"> &
+  VariantProps<typeof wrappedInputVariants>;
+
+export const WrappedInputDumb = React.forwardRef<
+  HTMLDivElement,
+  WrappedInputDumbProps
+>(({ className, state, ...props }, ref) => {
+  return (
+    <div
+      ref={ref}
+      className={cn(wrappedInputVariants({ state }), className)}
+      {...props}
+    />
+  );
+});
+
+WrappedInputDumb.displayName = "Wrapped Input";
