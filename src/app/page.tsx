@@ -4,6 +4,7 @@ import { Label, LabelWrap } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 import { ProfileForm } from "@/components/form-demo";
+import { ContactForm } from "@/components/contact-form";
 
 export default function Home() {
   return (
@@ -58,6 +59,7 @@ export default function Home() {
           </RadioGroup>
         </div>
       </div>
+      {/* foo */}
       <div className="border border-white w-full rounded-lg py-8 px-4 my-4">
         <div className="flex flex-col gap-4">
           <div className="flex flex-row gap-4 ">
@@ -68,6 +70,10 @@ export default function Home() {
         </div>
       </div>
       <ProfileForm />
+      <div className="mt-8"></div>
+      <hr />
+      <div className="mt-8"></div>
+      <ContactForm />
     </main>
   );
 }

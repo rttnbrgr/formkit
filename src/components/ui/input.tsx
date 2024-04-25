@@ -9,8 +9,7 @@ import { cva, VariantProps } from "class-variance-authority";
  */
 
 // FIX: placeholder, typography
-
-const _base = "flex h-9 w-full bg-grey1 ";
+const _base = "flex h-9 w-full bg-transparent";
 const _border = "";
 // const _typography = "typography-2 placeholder:text-muted-foreground";
 const _typography =

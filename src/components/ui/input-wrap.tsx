@@ -11,9 +11,8 @@ const _focus =
 const _error =
   "border-redNew border-solid focus-within:border-redNew text-redNew";
 
-// set text to be contextual
-
-// set height or adjust padding
+// ? set text to be contextual
+// ? set height or adjust padding
 // should be 70 via figam
 // setting to 74 until we adjust input height
 
