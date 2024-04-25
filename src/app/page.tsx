@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label, LabelWrap } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { WrappedInput } from "@/components/ui/input";
+
 import { ProfileForm } from "@/components/form-demo";
 
 export default function Home() {
@@ -24,17 +24,16 @@ export default function Home() {
 
         {/* Input */}
         <div>before</div>
-        <div className="flex flex-col gap-4 ">
+        {/* <div className="flex flex-col gap-4 ">
           <WrappedInput />
         </div>
         <div className="flex flex-col gap-4 ">
           <WrappedInput placeholder="Placeholder" />
-        </div>
+        </div> */}
         <div className="flex flex-col gap-4 ">
           <input />
         </div>
         <div className="flex flex-col gap-4 ">
-          <Label size="compare">Label</Label>
           <Label size="small">Label</Label>
           <Label size="default">Label</Label>
         </div>
@@ -62,10 +61,10 @@ export default function Home() {
       <div className="border border-white w-full rounded-lg py-8 px-4 my-4">
         <div className="flex flex-col gap-4">
           <div className="flex flex-row gap-4 ">
-            <WrappedInput className="grow" />
-            <WrappedInput className="grow" placeholder="Placeholder" />
+            {/* <WrappedInput className="grow" />
+            <WrappedInput className="grow" placeholder="Placeholder" /> */}
           </div>
-          <WrappedInput />
+          {/* <WrappedInput /> */}
         </div>
       </div>
       <ProfileForm />

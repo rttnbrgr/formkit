@@ -10,11 +10,13 @@ import {
   FormControl,
   FormDescription,
   FormField,
+  FormInputWrap,
   FormItem,
   FormLabel,
   FormMessage,
+  useFormField,
 } from "@/components/ui/form";
-import { Input, WrappedInput, WrappedInputDumb } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -65,20 +67,17 @@ export function ProfileForm() {
         <FormField
           control={form.control}
           name="usernameAlt"
-          render={({ field, fieldState, formState }) => {
-            console.log("fieldState", fieldState);
-            console.log("field", field);
-            console.log("formState", formState);
+          render={({ field }) => {
             return (
               // tbis is the context wrapper for the item?
               <FormItem>
-                <WrappedInputDumb>
-                  <FormLabel />
-                  {/* This is the slot */}
+                {/* This is the slot */}
+                <FormInputWrap>
+                  <FormLabel size="small">Label Here</FormLabel>
                   <FormControl>
                     <Input placeholder="shadcn" {...field} />
                   </FormControl>
-                </WrappedInputDumb>
+                </FormInputWrap>
                 <FormMessage />
               </FormItem>
             );

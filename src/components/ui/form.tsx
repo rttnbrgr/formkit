@@ -11,7 +11,8 @@ import {
 } from "react-hook-form";
 
 import { cn } from "@/lib/utils";
-import { Label } from "@/components/ui/label";
+import { Label, LabelProps, LabelRef } from "@/components/ui/label";
+import { InputWrap, InputWrapProps } from "./input-wrap";
 
 /**
  * Form + FormField
@@ -70,7 +71,7 @@ const useFormField = () => {
 /**
  * FormItem
  * --------------------
- * Provider & Context
+ * Adds item context + id?
  */
 type FormItemContextValue = {
   id: string;
@@ -88,38 +89,61 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div
-        ref={ref}
-        className={cn("space-y-2", "FORM_ITEM", className)}
-        {...props}
-      />
+      <div ref={ref} className={cn("FORM_ITEM", className)} {...props} />
     </FormItemContext.Provider>
   );
 });
 FormItem.displayName = "FormItem";
 
 /**
- * Wraps around label
+ * FormLabel
+ * --------------------
+ * Handles passing error and form item info to the label
  */
-const FormLabel = React.forwardRef<
-  React.ElementRef<typeof LabelPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, ...props }, ref) => {
-  const { error, formItemId } = useFormField();
+const FormLabel = React.forwardRef<LabelRef, LabelProps>(
+  ({ className, ...props }, ref) => {
+    const { error, formItemId } = useFormField();
 
-  return (
-    <Label
-      ref={ref}
-      // className={cn(error && "text-destructive", className)}
-      className={cn(["FORM_LABEL", className])}
-      state={!!error ? "error" : "default"}
-      htmlFor={formItemId}
-      {...props}
-    />
-  );
-});
+    return (
+      <Label
+        ref={ref}
+        className={cn(["FORM_LABEL", className])}
+        hasError={!!error}
+        htmlFor={formItemId}
+        {...props}
+      />
+    );
+  }
+);
 FormLabel.displayName = "FormLabel";
 
+/**
+ * FormInputWrap
+ * --------------------
+ * Handles passing error and form item info to the label
+ */
+const FormInputWrap = React.forwardRef<HTMLDivElement, InputWrapProps>(
+  ({ className, hasError, ...props }, ref) => {
+    const { error } = useFormField();
+
+    return (
+      <InputWrap
+        ref={ref}
+        // hasError
+        hasError={!!error}
+        className={cn(["FORM_INPUT_WRAP", className])}
+        {...props}
+      />
+    );
+  }
+);
+FormInputWrap.displayName = "Input Wrap";
+
+/**
+ * FormControl
+ * --------------------
+ * Wraps around the exact form control (input, radio, etc)
+ */
 const FormControl = React.forwardRef<
   React.ElementRef<typeof Slot>,
   React.ComponentPropsWithoutRef<typeof Slot>
@@ -143,6 +167,11 @@ const FormControl = React.forwardRef<
 });
 FormControl.displayName = "FormControl";
 
+/**
+ * FormDescription
+ * --------------------
+ * Text description?
+ */
 const FormDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
@@ -160,6 +189,11 @@ const FormDescription = React.forwardRef<
 });
 FormDescription.displayName = "FormDescription";
 
+/**
+ * FormMessage
+ * --------------------
+ * error message and the like
+ */
 const FormMessage = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
@@ -175,7 +209,10 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn("text-sm font-medium text-destructive", className)}
+      className={cn(
+        "font-sans text-sm font-medium text-destructive",
+        className
+      )}
       {...props}
     >
       {body}
@@ -193,4 +230,5 @@ export {
   FormDescription,
   FormMessage,
   FormField,
+  FormInputWrap,
 };
