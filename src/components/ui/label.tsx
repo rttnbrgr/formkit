@@ -21,27 +21,29 @@ const labelVariants = cva([_typography, _disabled], {
       small: ["typography-4"],
       default: ["typography-3"],
     },
-    state: {
-      default: "",
-      error: "text-teal-500",
+    hasError: {
+      false: "",
+      true: "text-redNew",
     },
   },
   defaultVariants: {
     size: "default",
-    state: "default",
+    hasError: false,
   },
 });
 
-type LabelRef = React.ElementRef<typeof LabelPrimitive.Root>;
+export type LabelRef = React.ElementRef<typeof LabelPrimitive.Root>;
 
-type LabelProps = React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
+export type LabelProps = React.ComponentPropsWithoutRef<
+  typeof LabelPrimitive.Root
+> &
   VariantProps<typeof labelVariants>;
 
 const Label = React.forwardRef<LabelRef, LabelProps>(
-  ({ className, size, state, ...props }, ref) => (
+  ({ className, size, hasError, ...props }, ref) => (
     <LabelPrimitive.Root
       ref={ref}
-      className={cn(labelVariants({ size, state }), className)}
+      className={cn(labelVariants({ size, hasError }), className)}
       {...props}
     />
   )
