@@ -1,25 +1,22 @@
-import Image from "next/image";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label, LabelWrap } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-
-import { ProfileForm } from "@/components/form-demo";
-import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/asset/logo";
+
+const debugResponsive =
+  "sm:bg-red-500 md:bg-blue-500 lg:bg-green-500 xl:bg-purple-500";
 
 // add semantic bg colors
 // Do you need non-semantic tailwind help?
-// md:bg-blue-500 lg:bg-green-500 xl:bg-purple-500
+// add CTA => Email
+// add CTA => Figma Link
+// write copy
+// remove old pages
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-start bg-grey1 px-8 py-12 sm:bg-red-500 sm:justify-center ">
-      <div className="flex flex-col items-center justify-center gap-12 bg-black/40">
+    <main className="flex min-h-screen flex-col justify-start bg-grey1 px-8 py-12 sm:justify-center">
+      <div className="flex flex-col items-center justify-center gap-12 ">
         <div className="flex flex-col items-center justify-center gap-6 max-w-[800px]">
           {/* Logo */}
-          <div className="w-[228px] h-'[68px] flex gap-4">
-            <div className="h-5 rounded bg-black w-full" />
-            <div className="w-5 h-5 rounded bg-pink-500" />
-          </div>
+          <Logo />
           {/* Copy */}
           <div className="typography-2">
             Baby vaporware brunch lomo bodega boys distillery kogi, air plant
