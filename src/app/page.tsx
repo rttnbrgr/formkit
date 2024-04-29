@@ -12,7 +12,7 @@ const debugResponsive =
 // remove old pages
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-start bg-grey1 px-8 py-12 sm:justify-center">
+    <main className="flex min-h-screen flex-col justify-start px-8 py-12 sm:justify-center">
       <div className="flex flex-col items-center justify-center gap-12 ">
         <div className="flex flex-col items-center justify-center gap-6 max-w-[800px]">
           {/* Logo */}

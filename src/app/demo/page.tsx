@@ -9,12 +9,12 @@ import { ColorDebug } from "@/components/color-debug";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-center p-24 bg-grey1">
+    <main className="flex min-h-screen flex-col justify-center p-24">
       <ColorDebug />
       <div className="flex flex-col gap-10 ">
         {/* RadioGroup */}
         <div className="flex flex-col gap-4 ">
-          <div className="text-blackk font-sans text-lg font-normal leading-snug">
+          <div className="font-sans text-lg font-normal leading-snug">
             I consent to Figma sharing my name and company name with Figma’s
             Config sponsors for marketing purposes. Note: You may also choose to
             share your contact information with specific sponsors at Config by
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
         {/* Checkbox */}
         <div className="flex flex-col gap-4 ">
-          <div className="text-blackk font-sans text-lg font-normal leading-snug">
+          <div className="font-sans text-lg font-normal leading-snug">
             By filling out this form, you agree that you have read the Config
             FAQ.
           </div>
