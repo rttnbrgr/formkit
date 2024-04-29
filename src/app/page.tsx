@@ -10,7 +10,6 @@ import { ColorDebug } from "@/components/color-debug";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-center p-24 bg-grey1">
-      <ColorDebug />
       <div className="flex flex-col gap-10 ">
         {/* Checkbox */}
         <div>hi</div>
