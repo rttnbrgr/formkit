@@ -5,10 +5,138 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 import { ProfileForm } from "@/components/form-demo";
 import { ContactForm } from "@/components/contact-form";
+import { cn } from "@/lib/utils";
+
+const rawShad = [
+  "background",
+  "foreground",
+  "card",
+  "card-foreground",
+  "popover",
+  "popover-foreground",
+  "primary",
+  "primary-foreground",
+  "secondary",
+  "secondary-foreground",
+  "muted",
+  "muted-foreground",
+  "accent",
+  "accent-foreground",
+  "destructive",
+  "destructive-foreground",
+  "border",
+  "input",
+  "ring",
+];
+
+/* new */
+const rawCustom = ["blackk", "grey1", "grey2", "redNew", "blueNew"];
+
+// shad
+const shadTailwindColors = [
+  "bg-border",
+  "bg-input",
+  "bg-ring",
+  "bg-background",
+  "bg-foreground",
+  "bg-primary",
+  "bg-primary-foreground",
+  "bg-secondary",
+  "bg-secondary-foreground",
+  "bg-destructive",
+  "bg-destructive-foreground",
+  "bg-muted",
+  "bg-muted-foreground",
+  "bg-accent",
+  "bg-accent-foreground",
+  "bg-popover",
+  "bg-popover-foreground",
+  "bg-card",
+  "bg-card-foreground",
+];
+// prmitive
+const customColors = [
+  "bg-blackk",
+  "bg-grey1",
+  "bg-grey2",
+  "bg-redNew",
+  "bg-blueNew",
+  "bg-form",
+  "bg-interactive",
+  "bg-interactive-foreground",
+];
+
+const ColorItem = ({ color }: { color: string }) => (
+  <div className="flex gap-2 items-center">
+    <div className={cn(["rounded w-4 h-4", color])} />
+    <div className={"font-sans text-md"}>{color}</div>
+  </div>
+);
+
+const ColorItemRaw = ({
+  color,
+  useHsl = false,
+}: {
+  color: string;
+  useHsl?: boolean;
+}) => {
+  const varInner = `var(--${color})`;
+  const colorVar = useHsl ? `hsl(${varInner})` : varInner;
+  return (
+    <div className="flex gap-2 items-center">
+      <div
+        className={cn(["rounded w-4 h-4"])}
+        style={{
+          backgroundColor: colorVar,
+        }}
+      />
+      <div className={"font-sans text-md"}>{color}</div>
+    </div>
+  );
+};
+
+const ColorDebug = () => {
+  //
+  return (
+    <div className="p-24 border border-red-500">
+      <div className="p-2 rounded ">
+        raw
+        <div className="p-2 rounded ">shad</div>
+        <div className="flex flex-col gap-2">
+          {rawShad.map((color, i) => (
+            <ColorItemRaw key={i} color={color} useHsl />
+          ))}
+        </div>
+        <div className="p-2 rounded ">custom</div>
+        <div className="flex flex-col gap-2">
+          {rawCustom.map((color, i) => (
+            <ColorItemRaw key={i} color={color} useHsl={false} />
+          ))}
+        </div>
+      </div>
+
+      <div className="p-2 rounded ">tailwind</div>
+      <div className="p-2 rounded ">shad</div>
+      <div className="flex flex-col gap-2">
+        {shadTailwindColors.map((color, i) => (
+          <ColorItem key={i} color={color} />
+        ))}
+      </div>
+
+      <div className="p-2 rounded ">custom</div>
+      <div className="flex flex-col gap-2">
+        {customColors.map((color, i) => (
+          <ColorItem key={i} color={color} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-center p-24 bg-grey1">
+      <ColorDebug />
       <div className="flex flex-col gap-10 ">
         {/* Checkbox */}
         <div>hi</div>
