@@ -69,12 +69,24 @@ const config = {
         redNew: "var(--redNew)",
         blueNew: "var(--blueNew)",
         // semantic
+        bg: "var(--p-grey)",
+        fg: "var(--p-black)",
         form: {
           DEFAULT: "var(--blackk)",
+          bg: "var(--p-grey2)",
+          fg: "var(--p-black)",
+          fgDisabled: "rgba(33, 33, 33, 0.45)",
         },
         interactive: {
-          DEFAULT: colors.blue[500], // need brighter
+          // DEFAULT: colors.blue[500], // need brighter
           foreground: colors.white,
+          DEFAULT: "var(--p-blue)",
+          fg: "var(--p-white)",
+        },
+        error: {
+          // DEFAULT: "var(--p-red)",
+          fg: "var(--p-red)",
+          fgDisabled: "rgba(209, 0, 0, 0.45)",
         },
       },
       borderRadius: {

@@ -67,4 +67,17 @@ export const tailwindCustomColors = [
   "bg-form",
   "bg-interactive",
   "bg-interactive-foreground",
+  //
+  "========================",
+  "bg-bg",
+  "bg-fg",
+  "bg-form",
+  "bg-form-bg:",
+  "bg-form-fg",
+  "bg-form-fgDisabled",
+  "bg-interactive",
+  "bg-interactive-foreground",
+  "bg-interactive-fg",
+  "bg-error-fg",
+  "bg-error-fgDisabled",
 ];
