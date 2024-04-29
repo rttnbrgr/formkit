@@ -90,45 +90,78 @@ const ColorItemRaw = ({
           backgroundColor: colorVar,
         }}
       />
-      <div className={"font-sans text-md"}>{color}</div>
+      <div className={"typography-4"}>{color}</div>
     </div>
   );
 };
 
-const ColorDebug = () => {
+type ColorDebugProps = {
+  showTailwind?: boolean;
+  showRaw?: boolean;
+  showShad?: boolean;
+  showCustom?: boolean;
+};
+
+const ColorDebug = ({
+  showTailwind = true,
+  showRaw = true,
+  showShad = true,
+  showCustom = true,
+}: ColorDebugProps) => {
   //
   return (
-    <div className="p-24 border border-red-500">
-      <div className="p-2 rounded ">
-        raw
-        <div className="p-2 rounded ">shad</div>
-        <div className="flex flex-col gap-2">
-          {rawShad.map((color, i) => (
-            <ColorItemRaw key={i} color={color} useHsl />
-          ))}
+    <div className="p-24 border border-red-500 flex gap-16">
+      {/* Raw Collection */}
+      {showRaw && (
+        <div className="flex flex-col gap-8">
+          <div className="typography-2">raw</div>
+          {/* Colors Row */}
+          <div className="flex gap-4">
+            {showShad && (
+              <div className="flex flex-col gap-2">
+                <div className="typography-2">shad</div>
+                {rawShad.map((color, i) => (
+                  <ColorItemRaw key={i} color={color} useHsl />
+                ))}
+              </div>
+            )}
+            {showCustom && (
+              <div className="flex flex-col gap-2">
+                <div className="typography-2">custom</div>
+                {rawCustom.map((color, i) => (
+                  <ColorItemRaw key={i} color={color} useHsl={false} />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-        <div className="p-2 rounded ">custom</div>
-        <div className="flex flex-col gap-2">
-          {rawCustom.map((color, i) => (
-            <ColorItemRaw key={i} color={color} useHsl={false} />
-          ))}
+      )}
+
+      {/* Taiwlind Collection */}
+      {showTailwind && (
+        <div className="flex flex-col gap-8">
+          <div className="typography-2">tailwind</div>
+          {/* Colors Row */}
+          <div className="flex gap-4">
+            {showShad && (
+              <div className="flex flex-col gap-2">
+                <div className="typography-2">shad</div>
+                {shadTailwindColors.map((color, i) => (
+                  <ColorItem key={i} color={color} />
+                ))}
+              </div>
+            )}
+            {showCustom && (
+              <div className="flex flex-col gap-2">
+                <div className="typography-2">custom</div>
+                {customColors.map((color, i) => (
+                  <ColorItem key={i} color={color} />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-
-      <div className="p-2 rounded ">tailwind</div>
-      <div className="p-2 rounded ">shad</div>
-      <div className="flex flex-col gap-2">
-        {shadTailwindColors.map((color, i) => (
-          <ColorItem key={i} color={color} />
-        ))}
-      </div>
-
-      <div className="p-2 rounded ">custom</div>
-      <div className="flex flex-col gap-2">
-        {customColors.map((color, i) => (
-          <ColorItem key={i} color={color} />
-        ))}
-      </div>
+      )}
     </div>
   );
 };
@@ -136,7 +169,7 @@ const ColorDebug = () => {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-center p-24 bg-grey1">
-      <ColorDebug />
+      <ColorDebug showTailwind={false} />
       <div className="flex flex-col gap-10 ">
         {/* Checkbox */}
         <div>hi</div>
