@@ -1,0 +1,62 @@
+export const rawShadColors = [
+  "background",
+  "foreground",
+  "card",
+  "card-foreground",
+  "popover",
+  "popover-foreground",
+  "primary",
+  "primary-foreground",
+  "secondary",
+  "secondary-foreground",
+  "muted",
+  "muted-foreground",
+  "accent",
+  "accent-foreground",
+  "destructive",
+  "destructive-foreground",
+  "border",
+  "input",
+  "ring",
+];
+
+export const rawCustomColors = [
+  "blackk",
+  "grey1",
+  "grey2",
+  "redNew",
+  "blueNew",
+];
+
+export const tailwindShadColors = [
+  "bg-border",
+  "bg-input",
+  "bg-ring",
+  "bg-background",
+  "bg-foreground",
+  "bg-primary",
+  "bg-primary-foreground",
+  "bg-secondary",
+  "bg-secondary-foreground",
+  "bg-destructive",
+  "bg-destructive-foreground",
+  "bg-muted",
+  "bg-muted-foreground",
+  "bg-accent",
+  "bg-accent-foreground",
+  "bg-popover",
+  "bg-popover-foreground",
+  "bg-card",
+  "bg-card-foreground",
+];
+
+export const tailwindCustomColors = [
+  "bg-blackk",
+  "bg-grey1",
+  "bg-grey2",
+  "bg-redNew",
+  "bg-blueNew",
+  "bg-form",
+  "bg-interactive",
+  "bg-interactive-foreground",
+];
