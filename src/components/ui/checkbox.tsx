@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
  * Checkbox Container
  */
 const _box = "group peer shrink-0 h-7 w-7 p-0.5";
-const _border = "border-2 border-dashed border-form";
+const _border = "border-2 border-dashed border-form-fg";
 const _focus =
   "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
 const _checked = "";
@@ -28,7 +28,7 @@ const _disabled = "disabled:cursor-not-allowed disabled:opacity-50";
  * Checkbox Indicator
  */
 const _innerBox = "flex items-center justify-center w-full h-full";
-const _innerChecked = "text-current bg-interactive text-interactive-foreground";
+const _innerChecked = "text-current bg-interactive text-interactive-fg";
 
 type CheckboxRef = React.ElementRef<typeof CheckboxPrimitive.Root>;
 type CheckboxProps = React.ComponentPropsWithoutRef<
