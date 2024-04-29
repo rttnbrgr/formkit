@@ -26,6 +26,14 @@ export const rawCustomColors = [
   "grey2",
   "redNew",
   "blueNew",
+  //
+  "----blank----",
+  "p-white",
+  "p-grey",
+  "p-grey2",
+  "p-black",
+  "p-red",
+  "p-blue",
 ];
 
 export const tailwindShadColors = [
