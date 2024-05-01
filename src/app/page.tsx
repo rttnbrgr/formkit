@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/asset/logo";
+import Link from "next/link";
 
 const debugResponsive =
   "sm:bg-red-500 md:bg-blue-500 lg:bg-green-500 xl:bg-purple-500";
@@ -25,12 +26,16 @@ export default function Home() {
             polaroid mlkshk salvia ethical. Squid intelligentsia listicle,
             humblebrag fixie drinking vinegar jawn subway tile venmo. Art party
             forage ethical fanny pack grailed beard cardigan wayfarers paleo
-            mixtape. aajdkfja;skfjasdk;
+            mixtape. aajdkfja;skfjasdk; c
           </div>
         </div>
-        <div className="flex flex-col gap-4 bg-green-300 w-full max-w-[390px] sm:flex-row sm:w-auto sm:max-w-fit">
-          <Button className="w-full">Tell Me More</Button>
-          <Button>Get Figma File</Button>
+        <div className="flex flex-col gap-4 w-full max-w-[390px] sm:flex-row sm:w-auto sm:max-w-fit">
+          <Button className="w-full" variant="outline" asChild>
+            <a href="mailto:foo@gmail.com">Tell Me More</a>
+          </Button>
+          <Button asChild>
+            <Link href="/demo">Get Figma File</Link>
+          </Button>
         </div>
       </div>
     </main>
