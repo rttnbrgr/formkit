@@ -25,7 +25,6 @@ const config = {
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
 
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -59,6 +58,7 @@ const config = {
         // Semantic Overrides
         background: "var(--p-grey)", // for ring offset
         foreground: "var(--p-black)",
+        ring: "var(--p-black)",
 
         // New + semantic
         form: {
