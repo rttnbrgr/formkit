@@ -24,18 +24,18 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-start px-8 py-12 sm:justify-center">
       <div className="flex flex-col items-center justify-center gap-12 ">
-        <div className="flex flex-col items-center justify-center gap-6 max-w-[800px]">
+        <div className="flex flex-col items-center justify-center gap-6 max-w-[648px]">
           {/* Logo */}
           <Logo />
           {/* Copy */}
           <div className="typography-2">
-            Baby vaporware brunch lomo bodega boys distillery kogi, air plant
-            cupping subway tile fingerstache tumeric cardigan tacos +1.
-            Farm-to-table bespoke freegan meggings sus lomo four loko. Taxidermy
-            polaroid mlkshk salvia ethical. Squid intelligentsia listicle,
-            humblebrag fixie drinking vinegar jawn subway tile venmo. Art party
-            forage ethical fanny pack grailed beard cardigan wayfarers paleo
-            mixtape. aajdkfja;skfjasdk; c
+            Formkit is a tool set for designing beautiful forms and getting them
+            deployed. It is currently in pre-beta, but you can check out the
+            Figma file while we iron everything out.
+          </div>
+          <div className="typography-2">
+            If you have any questions about the file or the project, feel free
+            to reach out below. Talk to ya soon. 👋
           </div>
         </div>
         <div className="flex flex-col gap-4 w-full max-w-[390px] sm:flex-row sm:w-auto sm:max-w-fit">
