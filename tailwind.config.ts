@@ -25,9 +25,7 @@ const config = {
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -56,25 +54,26 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // new
-        //
-        //
-        //
-        //
 
-        // prmitive
-        blackk: "var(--blackk)",
-        grey1: "var(--grey1)",
-        grey2: "var(--grey2)",
-        redNew: "var(--redNew)",
-        blueNew: "var(--blueNew)",
-        // semantic
+        // Semantic Overrides
+        background: "var(--p-grey)", // for ring offset
+        foreground: "var(--p-black)",
+        ring: "var(--p-black)",
+
+        // New + semantic
         form: {
-          DEFAULT: "var(--blackk)",
+          DEFAULT: "var(--p-grey2)",
+          fg: "var(--p-black)",
+          fgDisabled: "rgba(33, 33, 33, 0.45)",
         },
         interactive: {
-          DEFAULT: colors.blue[500], // need brighter
-          foreground: colors.white,
+          DEFAULT: "var(--p-blue)",
+          fg: "var(--p-white)",
+        },
+        error: {
+          // DEFAULT: "var(--p-red)",
+          fg: "var(--p-red)",
+          fgDisabled: "rgba(209, 0, 0, 0.45)",
         },
       },
       borderRadius: {

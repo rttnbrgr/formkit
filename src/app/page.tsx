@@ -1,80 +1,57 @@
-import Image from "next/image";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label, LabelWrap } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/asset/logo";
+import Link from "next/link";
 
-import { ProfileForm } from "@/components/form-demo";
-import { ContactForm } from "@/components/contact-form";
-import { ColorDebug } from "@/components/color-debug";
+const debugResponsive =
+  "sm:bg-red-500 md:bg-blue-500 lg:bg-green-500 xl:bg-purple-500";
 
+// add semantic bg colors
+// Do you need non-semantic tailwind help?
+// add CTA => Email
+// add CTA => Figma Link
+// write copy
+// remove old pages
 export default function Home() {
+  const figmaLink = process.env.NEXT_PUBLIC_LINK_FIGMA;
+  const mailLink = process.env.NEXT_PUBLIC_LINK_MAIL;
+
+  if (!mailLink || !figmaLink) {
+    return;
+  }
+
+  figmaLink;
+
   return (
-    <main className="flex min-h-screen flex-col justify-center p-24 bg-grey1">
-      <div className="flex flex-col gap-10 ">
-        {/* Checkbox */}
-        <div>hi</div>
-        <div className="flex flex-col gap-4 bg-indigo-500">
-          <div className="text-blackk font-sans text-lg font-normal leading-snug">
-            By filling out this form, you agree that you have read the Config
-            FAQ.
+    <main className="flex min-h-screen flex-col justify-start px-8 py-12 sm:justify-center">
+      <div className="flex flex-col items-center justify-center gap-12 ">
+        <div className="flex flex-col items-center justify-center gap-6 max-w-[648px]">
+          {/* Logo */}
+          <Logo />
+          {/* Copy */}
+          <div className="typography-2">
+            Formkit is a tool set for designing beautiful forms and getting them
+            deployed. It is currently in pre-beta, but you can check out the
+            Figma file while we iron everything out.
           </div>
-          <LabelWrap>
-            <Checkbox id="terms" />
-            <Label htmlFor="terms">Yes</Label>
-          </LabelWrap>
-        </div>
-
-        {/* Input */}
-        <div>before</div>
-        {/* <div className="flex flex-col gap-4 ">
-          <WrappedInput />
-        </div>
-        <div className="flex flex-col gap-4 ">
-          <WrappedInput placeholder="Placeholder" />
-        </div> */}
-        <div className="flex flex-col gap-4 ">
-          <input />
-        </div>
-        <div className="flex flex-col gap-4 ">
-          <Label size="small">Label</Label>
-          <Label size="default">Label</Label>
-        </div>
-
-        {/* RadioGroup */}
-        <div className="flex flex-col gap-4 ">
-          <div className="text-blackk font-sans text-lg font-normal leading-snug">
-            I consent to Figma sharing my name and company name with Figma’s
-            Config sponsors for marketing purposes. Note: You may also choose to
-            share your contact information with specific sponsors at Config by
-            letting them scan your attendee badge.
+          <div className="typography-2">
+            If you have any questions about the file or the project, feel free
+            to reach out below. Talk to ya soon. 👋
           </div>
-          <RadioGroup defaultValue="comfortable">
-            <LabelWrap>
-              <RadioGroupItem value="default" id="r1" />
-              <Label htmlFor="r1">Yes</Label>
-            </LabelWrap>
-            <LabelWrap>
-              <RadioGroupItem value="comfortable" id="r2" />
-              <Label htmlFor="r2">No</Label>
-            </LabelWrap>
-          </RadioGroup>
+        </div>
+        <div className="flex flex-col gap-4 w-full max-w-[390px] sm:flex-row sm:w-auto sm:max-w-fit">
+          <Button className="w-full" variant="outline" asChild>
+            <Link
+              target="_blank"
+              href={`${mailLink}?subject=Tell me more about Formkit! 🚀`}
+            >
+              Tell Me More
+            </Link>
+          </Button>
+          <Button asChild>
+            <Link href={figmaLink}>Get Figma File</Link>
+          </Button>
         </div>
       </div>
-      {/* foo */}
-      <div className="border border-white w-full rounded-lg py-8 px-4 my-4">
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-row gap-4 ">
-            {/* <WrappedInput className="grow" />
-            <WrappedInput className="grow" placeholder="Placeholder" /> */}
-          </div>
-          {/* <WrappedInput /> */}
-        </div>
-      </div>
-      <ProfileForm />
-      <div className="mt-8"></div>
-      <hr />
-      <div className="mt-8"></div>
-      <ContactForm />
     </main>
   );
 }

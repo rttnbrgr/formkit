@@ -23,7 +23,7 @@ const labelVariants = cva([_typography, _disabled], {
     },
     hasError: {
       false: "",
-      true: "text-redNew",
+      true: "text-error-fg",
     },
   },
   defaultVariants: {

@@ -34,12 +34,13 @@
 
     --radius: 0.5rem;
 
-    /* new */
-    --blackk: #212121;
-    --grey1: #cfdddd;
-    --grey2: rgb(37 37 37 / 5%);
-    --redNew: #d10000;
-    --blueNew: #0000ff;
+    /* Primitive */
+    --p-white: #ffffff;
+    --p-grey: #cfdddd;
+    --p-grey2: #ccd8d8;
+    --p-black: #212121;
+    --p-red: #d10000;
+    --p-blue: #0000ff;
   }
 
   .dark {

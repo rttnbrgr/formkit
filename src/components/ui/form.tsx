@@ -182,7 +182,7 @@ const FormDescription = React.forwardRef<
 
   return (
     <>
-      {/* <div className="text-blackk font-sans text-lg font-normal leading-snug">
+      {/* <div className="text-fg font-sans text-lg font-normal leading-snug">
         I consent to Figma sharing my name and company name with Figma’s Config
         sponsors for marketing purposes. Note: You may also choose to share your
         contact information with specific sponsors at Config by letting them
@@ -191,10 +191,7 @@ const FormDescription = React.forwardRef<
       <p
         ref={ref}
         id={formDescriptionId}
-        className={cn(
-          "text-blackk font-sans text-lg font-normal leading-snug",
-          className
-        )}
+        className={cn("font-sans text-lg font-normal leading-snug", className)}
         {...props}
       />
     </>

@@ -4,12 +4,12 @@ import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 
 // need modified fill
-const _base = "flex flex-col px-4 pt-3 pb-[1px] gap-1.5 rounded-t-md bg-grey2";
-const _border = "border border-dashed border-transparent border-b-blackk";
+const _base = "flex flex-col px-4 pt-3 pb-[1px] gap-1.5 rounded-t-md bg-form";
+const _border = "border border-dashed border-transparent border-b-form-fg";
 const _focus =
-  "focus-within:border-2 focus-within:border-solid focus-within:border-blackk focus-within:pt-[11px] focus-within:px-[15px] focus-within:pb-0";
+  "focus-within:border-2 focus-within:border-solid focus-within:border-form-fg focus-within:pt-[11px] focus-within:px-[15px] focus-within:pb-0";
 const _error =
-  "border-redNew border-solid focus-within:border-redNew text-redNew";
+  "border-error-fg border-solid focus-within:border-error-fg text-error-fg";
 
 // ? set text to be contextual
 // ? set height or adjust padding

@@ -21,11 +21,12 @@ export const rawShadColors = [
 ];
 
 export const rawCustomColors = [
-  "blackk",
-  "grey1",
-  "grey2",
-  "redNew",
-  "blueNew",
+  "p-white",
+  "p-grey",
+  "p-grey2",
+  "p-black",
+  "p-red",
+  "p-blue",
 ];
 
 export const tailwindShadColors = [
@@ -51,12 +52,15 @@ export const tailwindShadColors = [
 ];
 
 export const tailwindCustomColors = [
-  "bg-blackk",
-  "bg-grey1",
-  "bg-grey2",
-  "bg-redNew",
-  "bg-blueNew",
+  // Overrides
+  "bg-background",
+  "bg-foreground",
+  // Custom
   "bg-form",
+  "bg-form-fg",
+  "bg-form-fgDisabled",
   "bg-interactive",
-  "bg-interactive-foreground",
+  "bg-interactive-fg",
+  "bg-error-fg",
+  "bg-error-fgDisabled",
 ];

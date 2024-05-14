@@ -30,12 +30,12 @@ RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
 
 // Item
 const _box = "aspect-square h-7 w-7 rounded-full";
-const _border = "border-2 border-dashed border-form";
+const _border = "border-2 border-dashed border-form-fg";
 const _typography = "text-primary";
 const _focus =
   "ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
 const _disabled = "disabled:cursor-not-allowed disabled:opacity-50";
-const _error = "aria-[invalid=true]:border-redNew";
+const _error = "aria-[invalid=true]:border-error-fg";
 
 // Indicator
 const _indicator = "flex items-center justify-center";
