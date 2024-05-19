@@ -29,8 +29,8 @@ export default function Home() {
           <Logo />
           {/* Copy */}
           <div className="typography-2">
-            Formkit is a tool set for designing beautiful forms and getting them
-            deployed. It is currently in pre-beta, but you can check out the
+            form thing is a set of tools to design beautiful forms and get them
+            deployed. It is currently in development, but you can check out the
             Figma file while we iron everything out.
           </div>
           <div className="typography-2">
